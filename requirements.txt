@@ -1,6 +1,7 @@
 matplotlib==3.3.4
 numpy
-opencv-python-headless
+opencv-python==4.6.0.66
+opencv-python-headless==4.6.0.66
 Pillow
 scikit-learn
 tensorflow==2.6.2
