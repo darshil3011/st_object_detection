@@ -4,6 +4,6 @@ opencv-python-headless==4.5.5.64
 Pillow
 scikit-learn
 tensorflow==2.6.2
-streamlit==1.11.1
+streamlit==1.8
 tflite-model-maker
 tflite-support
