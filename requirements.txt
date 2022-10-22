@@ -2,7 +2,7 @@ matplotlib==3.3.4
 numpy
 opencv-python-headless
 Pillow
-scikit_learn==1.0.2
+scikit-learn
 tensorflow==2.6.2
 streamlit==1.8.1
 tflite-model-maker
