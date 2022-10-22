@@ -15,6 +15,7 @@ assert tf.__version__.startswith('2')
 import platform
 from typing import List, NamedTuple
 import json
+import cv2
 
 tf.get_logger().setLevel('ERROR')
 from absl import logging
