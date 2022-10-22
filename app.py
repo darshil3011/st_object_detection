@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image, ImageDraw as D
 import numpy as np
 import matplotlib.pyplot as plt
-from keras.preprocessing import image
 import re
 import base64
 import numpy as np
