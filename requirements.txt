@@ -1,10 +1,9 @@
 matplotlib==3.3.4
 numpy
-opencv_contrib_python==4.5.3.56
+opencv-python-headless==4.5.5.64
 Pillow
 scikit_learn==1.0.2
 tensorflow==2.6.2
 streamlit==1.8.1
 tflite-model-maker
 tflite-support
-opencv-python-headless==4.5.5.64
