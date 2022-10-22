@@ -1,5 +1,5 @@
 matplotlib==3.5.1
-numpy==1.17
+numpy==1.19.3
 opencv-python-headless==4.5.5.64
 Pillow
 scikit-learn
