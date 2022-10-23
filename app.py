@@ -15,7 +15,7 @@ assert tf.__version__.startswith('2')
 import platform
 from typing import List, NamedTuple
 import json
-import cv2
+
 
 tf.get_logger().setLevel('ERROR')
 from absl import logging
@@ -190,8 +190,11 @@ class ObjectDetector:
         """Preprocess the input image as required by the TFLite model."""
 
         # Resize the input
-        input_tensor = cv2.resize(input_image, self._input_size)
-
+        
+        #input_tensor = cv2.resize(input_image, self._input_size)
+        resize_input = Image.fromarray(input_image)
+        input_tensor = resize_input.resize((320,320))
+        
         # Normalize the input if it's a float model (aka. not quantized)
         if not self._is_quantized_input:
             input_tensor = (np.float32(input_tensor) - self._mean) / self._std
@@ -279,8 +282,13 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
         if detection.categories[0].score > 0.5:
             start_point = detection.bounding_box.left, detection.bounding_box.top
             end_point = detection.bounding_box.right, detection.bounding_box.bottom
-            cv2.rectangle(image, start_point, end_point, _TEXT_COLOR, 3)
-
+            #cv2.rectangle(image, start_point, end_point, _TEXT_COLOR, 3)
+            image = Image.fromarray(image)
+            draw = ImageDraw.Draw(image)
+            draw.rectangle((start_point[0],start_point[1],end_point[0],end_point[1]), fill=None)
+            image = np.array(image)
+            
+            
             # Draw label and score
             category = detection.categories[0]
             class_name = category.label
@@ -288,8 +296,8 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
             result_text = class_name + ' (' + str(probability) + ')'
             text_location = (_MARGIN + detection.bounding_box.left,
                              _MARGIN + _ROW_SIZE + detection.bounding_box.top)
-            cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
-                        _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
+            #cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
+            #           _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
 
     return image
 
