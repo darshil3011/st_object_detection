@@ -330,13 +330,13 @@ def main():
                 plt.figure(figsize = (1,1.5))
                 plt.axis("off")
                 st.pyplot(fig)
-                st.subheader("Tip: Try to cover your mouth with hand and see what it detects !")
+                st.text("Tip: Try to cover your mouth with hand and see if you can fool AI !")
 
                 
 if __name__ == "__main__":
     main()
     with st.container():
         st.markdown("<h2 style='text-align: center; color: black;'>Object Detection - Applications</h2>", unsafe_allow_html=True)
-        image = Image.open('screen1.png')
+        image = Image.open('screen3.png')
         st.image(image)
 
