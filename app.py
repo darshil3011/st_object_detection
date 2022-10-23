@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image, ImageDraw as D
+from PIL import Image, ImageDraw
 import numpy as np
 import matplotlib.pyplot as plt
 import re
