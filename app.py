@@ -334,13 +334,13 @@ def main():
                 plt.axis("off")
                 st.pyplot(fig)
                 if random_number == 1:
-                    st.markdown("Tip: Try to cover your mouth with hand and see if you can fool AI !")
+                    st.success("Tip: Try to cover your mouth with hand and see if you can fool AI !")
                 elif random_number == 2:
-                    st.markdown("Did you know : This AI model is so light-weight that it just occupies less than 4mb device space !")
+                    st.success("Did you know : This AI model is so light-weight that it just occupies less than 4mb device space !")
                 elif random_number == 3:
-                    st.markdown("What if you deploy this model to detect theives and burglars outside your house ?")
+                    st.success("What if you deploy this model to detect theives and burglars outside your house ?")
                 elif random_number == 4:
-                    st.markdown("Did you know : This is the same technology that is used in Tesla to detect on-road vehicles and obstacles !")
+                    st.success("Did you know : This is the same technology that is used in Tesla to detect on-road vehicles and obstacles !")
                 
 if __name__ == "__main__":
     main()
