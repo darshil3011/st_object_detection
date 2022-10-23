@@ -40,14 +40,14 @@ def add_bg_from_url(image_file):
          unsafe_allow_html=True
      )
 
-st.title("Emotion Recognition using AI")
+st.title("Covid Compliance using AI")
 st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
 
 add_bg_from_url('white.jpg') 
 
 st.sidebar.header("Behind the scenes !")
 #st.markdown('<div style="text-align: justify;">Hello World!</div>', unsafe_allow_html=True)
-st.sidebar.markdown('<div style="text-align: justify;">This emotion recongition module is a demonstration of our light-weight AI enabled Computer Vision Engine that identifies image pixels and classifies them into defined classes. Our read-to-deploy pipeline features: </div>', unsafe_allow_html=True)
+st.sidebar.markdown('<div style="text-align: justify;">This face-mask detection module is a demonstration of our light-weight AI enabled Computer Vision Engine that identifies pre-defined objects from the image. Our read-to-deploy pipeline features: </div>', unsafe_allow_html=True)
 st.sidebar.markdown("")
 st.sidebar.subheader("- Minimal Training")
 st.sidebar.subheader("- Accurate Results")
@@ -301,7 +301,7 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
             #cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
             #           _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
 
-    return image
+    return image, class_name
 
 
 
@@ -324,18 +324,19 @@ def main():
                 detections = detector.detect(image_np)
 
                 # Draw keypoints and edges on input image
-                image_np = visualize(image_np, detections)
+                image_np, class_name = visualize(image_np, detections)
 
                 plt.imshow(image_np)
                 plt.figure(figsize = (1,1.5))
                 plt.axis("off")
                 st.pyplot(fig)
+                st.subheader("Tip: Try to cover your mouth with hand and see what it detects !")
 
                 
 if __name__ == "__main__":
     main()
     with st.container():
-        st.markdown("<h2 style='text-align: center; color: black;'>Image Classification - Applications</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; color: black;'>Object Detection - Applications</h2>", unsafe_allow_html=True)
         image = Image.open('screen1.png')
         st.image(image)
 
