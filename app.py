@@ -282,7 +282,7 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
 
     for detection in detections:
         # Draw bounding_box
-        if detection.categories[0].score > 0.5:
+        if detection.categories[0].score > 0.25:
             start_point = detection.bounding_box.left, detection.bounding_box.top
             end_point = detection.bounding_box.right, detection.bounding_box.bottom
             #cv2.rectangle(image, start_point, end_point, _TEXT_COLOR, 3)
@@ -304,7 +304,7 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
             #cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
             #           _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
 
-    return image, class_name
+    return image
 
 
 
@@ -327,7 +327,7 @@ def main():
                 detections = detector.detect(image_np)
 
                 # Draw keypoints and edges on input image
-                image_np, class_name = visualize(image_np, detections)
+                image_np = visualize(image_np, detections)
 
                 plt.imshow(image_np)
                 plt.figure(figsize = (1,1.5))
