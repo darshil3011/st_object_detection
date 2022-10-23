@@ -57,7 +57,7 @@ st.sidebar.subheader("- Edge compatible")
 Interpreter = tf.lite.Interpreter
 load_delegate = tf.lite.experimental.load_delegate
 
-random_number = random.randint(1,4)
+random_number = random.randint(1,5)
 
 # pylint: enable=g-import-not-at-top
 
