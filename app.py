@@ -286,7 +286,7 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
             image = Image.fromarray(image)
             draw = ImageDraw.Draw(image)
             draw.rectangle((start_point[0],start_point[1],end_point[0],end_point[1]), fill=None)
-            image = np.array(image)
+            
             
             
             # Draw label and score
@@ -296,6 +296,8 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
             result_text = class_name + ' (' + str(probability) + ')'
             text_location = (_MARGIN + detection.bounding_box.left,
                              _MARGIN + _ROW_SIZE + detection.bounding_box.top)
+            draw.text((text_location),result_text,(255,255,255))
+            image = np.array(image)
             #cv2.putText(image, result_text, text_location, cv2.FONT_HERSHEY_PLAIN,
             #           _FONT_SIZE, _TEXT_COLOR, _FONT_THICKNESS)
 
