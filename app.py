@@ -15,6 +15,7 @@ assert tf.__version__.startswith('2')
 import platform
 from typing import List, NamedTuple
 import json
+import random
 
 
 tf.get_logger().setLevel('ERROR')
@@ -55,6 +56,8 @@ st.sidebar.subheader("- Edge compatible")
 
 Interpreter = tf.lite.Interpreter
 load_delegate = tf.lite.experimental.load_delegate
+
+random_number = random.randint(1,4)
 
 # pylint: enable=g-import-not-at-top
 
@@ -330,8 +333,14 @@ def main():
                 plt.figure(figsize = (1,1.5))
                 plt.axis("off")
                 st.pyplot(fig)
-                st.text("Tip: Try to cover your mouth with hand and see if you can fool AI !")
-
+                if random_number == 1:
+                    st.text("Tip: Try to cover your mouth with hand and see if you can fool AI !")
+                elif random_number == 2:
+                    st.text("Do you know : This AI model is so light-weight that it just occupies less than 4mb device space !")
+                elif random_number == 3:
+                    st.text("What if you deploy this model to detect theives and burglars outside your house ?")
+                elif random_number == 4:
+                    st.text("Do yoy know : This is the same technology that is used in Tesla to detect on-road vehicles and obstacles !")
                 
 if __name__ == "__main__":
     main()
