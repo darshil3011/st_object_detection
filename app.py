@@ -43,9 +43,6 @@ def add_bg_from_url(image_file):
 
 add_bg_from_url('white.jpg') 
 
-st.title("Covid Compliance using AI")
-st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
-
 st.sidebar.header("Behind the scenes !")
 #st.markdown('<div style="text-align: justify;">Hello World!</div>', unsafe_allow_html=True)
 st.sidebar.markdown('<div style="text-align: justify;">This face-mask detection module is a demonstration of our light-weight AI enabled Computer Vision Engine that identifies pre-defined objects from the image. Our read-to-deploy pipeline features: </div>', unsafe_allow_html=True)
@@ -53,6 +50,8 @@ st.sidebar.markdown("")
 st.sidebar.subheader("- Minimal Training")
 st.sidebar.subheader("- Accurate Results")
 st.sidebar.subheader("- Edge compatible")
+
+
 
 Interpreter = tf.lite.Interpreter
 load_delegate = tf.lite.experimental.load_delegate
@@ -312,7 +311,8 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
 def main():
     DETECTION_THRESHOLD = 0.5 #@param {type:"number"}
     TFLITE_MODEL_PATH = "android.tflite" #@param {type:"string"}
-
+    st.title("Covid Compliance using AI")
+    st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
     #file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
     with st.container():
             file_uploaded = st.camera_input("Take a picture")
