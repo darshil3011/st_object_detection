@@ -311,8 +311,7 @@ def visualize(image: np.ndarray,detections: List[Detection],) -> np.ndarray:
 def main():
     DETECTION_THRESHOLD = 0.5 #@param {type:"number"}
     TFLITE_MODEL_PATH = "android.tflite" #@param {type:"string"}
-    st.title("Covid Compliance using AI")
-    st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
+    
     #file_uploaded = st.file_uploader("Choose File", type=["png","jpg","jpeg"])
     with st.container():
             file_uploaded = st.camera_input("Take a picture")
@@ -346,6 +345,8 @@ def main():
                 
 if __name__ == "__main__":
     main()
+    st.title("Covid Compliance using AI")
+    st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
     with st.container():
         st.markdown("<h2 style='text-align: center; color: black;'>Object Detection - Applications</h2>", unsafe_allow_html=True)
         image = Image.open('screen3.png')
