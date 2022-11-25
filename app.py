@@ -41,10 +41,10 @@ def add_bg_from_url(image_file):
          unsafe_allow_html=True
      )
 
+add_bg_from_url('white.jpg') 
+
 st.title("Covid Compliance using AI")
 st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
-
-add_bg_from_url('white.jpg') 
 
 st.sidebar.header("Behind the scenes !")
 #st.markdown('<div style="text-align: justify;">Hello World!</div>', unsafe_allow_html=True)
