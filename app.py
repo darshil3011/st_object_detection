@@ -345,7 +345,7 @@ def main():
                 
 if __name__ == "__main__":
     with st.container():
-        st.markdown("<h1 color: black;'>Covid Compliance using AI</h1>", unsafe_allow_html=True)
+        st.markdown("<h1 style='color: black;'>Covid Compliance using AI</h1>", unsafe_allow_html=True)
         st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
     main()
    
