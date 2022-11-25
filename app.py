@@ -345,10 +345,10 @@ def main():
                 
 if __name__ == "__main__":
     with st.container():
-        st.markdown("<h2 style='text-align: center; color: black;'>Covid Compliance using AI</h2>", unsafe_allow_html=True)
+        st.markdown("<h1 color: black;'>Covid Compliance using AI</h1>", unsafe_allow_html=True)
         st.markdown("Powered by [Think In Bytes](https://www.thinkinbytes.in)")
     main()
-    #st.title("Covid Compliance using AI")
+   
     
     with st.container():
         st.markdown("<h2 style='text-align: center; color: black;'>Object Detection - Applications</h2>", unsafe_allow_html=True)
